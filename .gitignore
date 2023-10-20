@@ -6,4 +6,4 @@ target/
 *.class
 node_modules/
 *.jar
-.env
+.env 
