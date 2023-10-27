@@ -3,10 +3,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        double sum = 0.0;
-        int count = 0;
-        boolean bo = true;
-        Scanner sc = new Scanner(System.in);
+        
         Point3D one = new Point3D();
         Point3D two = new Point3D(1.0, 3.0, 5.0);
         Point3D tri = new Point3D(3.0, -5.0, 7.0);
@@ -28,15 +25,15 @@ public class Main {
         Vector3D summa = new Vector3D();
         Vector3D buff = new Vector3D();
         Vector3D ras = new Vector3D();
-        Vector3DProcessor.sumVec(twoV, triV, summa);
+        summa=Vector3DProcessor.sumVec(twoV, triV);
         System.out.print("сумма векторов: ");
         summa.printVec();
-        Vector3DProcessor.rasVec(summa, twoV, ras);
+        ras=Vector3DProcessor.rasVec(summa, twoV);
         System.out.print("разность векторов: ");
         ras.printVec();
         System.out.println("скалярное произведение векторов: " + Vector3DProcessor.skalar(summa, twoV));
         System.out.println("проверка на коллинеарность: " + Vector3DProcessor.kolPro(oneV, twoV));
-        Vector3DProcessor.vecPro(summa, twoV, buff);
+        buff=Vector3DProcessor.vecPro(summa, twoV);
         System.out.print("векторное произведение векторов: ");
         buff.printVec();
         System.out.println("вспомогательные векторы:");
@@ -52,57 +49,55 @@ public class Main {
         new Vector3D();
 
         int n=5;
-        Vector3D[] array = new Vector3D[n];
-        for (int j=0;j<n;j++){
-            array[j] = new Vector3D();
-        }
-        int l = Vector3DArray.lenMas(array);
+        Vector3DArray array = new Vector3DArray(n);
+
+        int l = array.lenMas();
         System.out.println("массив векторов");
-        Vector3DArray.printArray(array);
-        Vector3DArray.replace(array,v, 1);
-        Vector3DArray.replace(array,vec, 4);
+        array.printArray();
+        array.replace(v, 1);
+        array.replace(vec, 4);
         System.out.println("массив после замены 2-х векторов");
-        Vector3DArray.printArray(array);
-        double lena = Vector3DArray.maxLen(array);
-        int ind = Vector3DArray.findVec(array,vi);
-        int ind2 = Vector3DArray.findVec(array,v);
-        Vector3D sumAllVec = Vector3DArray.sumVector(array);
+        array.printArray();
+        double lena = array.maxLen();
+        int ind = array.findVec(vi);
+        int ind2 = array.findVec(v);
+        Vector3D sumAllVec = array.sumVector();
         System.out.println("длина массива: " + l);
         System.out.println("длина самого длинного вектора: " + lena);
         System.out.println("индекс заданного вектора(vi):  " + ind);
         System.out.println("индекс заданного вектора(v):  " + ind2);
         System.out.println("сумма всех векторов массива: " + sumAllVec.getX() + " " + sumAllVec.getY() + " " + sumAllVec.getZ());
         double[] mas = new double[7];
-        Vector3D lK = new Vector3D();
+        Vector3D lK ;
         for(int i = 0; i < mas.length; ++i) {
             mas[i] = (i * 2 % 7);
             System.out.println(mas[i]);
         }
-        Vector3DArray.linKom(array,mas, lK);
+        lK=array.linKom(mas);
         System.out.print("линейная комбинация векторов: ");
         lK.printVec();
-        double[] mas2 = new double[Vector3DArray.lenMas(array)];
+        double[] mas2 = new double[array.lenMas()];
         for(int i = 0; i < mas2.length; ++i) {
             mas2[i] = (i * 2 % 6 - 1);
             System.out.println(mas2[i]);
         }
-        Vector3DArray.linKom(array,mas2, lK);
+        lK=array.linKom(mas2);
         System.out.print("линейная комбинация векторов (попытка 2) ");
         lK.printVec();
-        Point3D[] masP = new Point3D[Vector3DArray.lenMas(array)];
+        Point3D[] masP = new Point3D[array.lenMas()];
         System.out.print("сдвигаем точку ");
         tri.printPoint();
         int size;
         for(size = 0; size < masP.length; ++size) {
             masP[size] = new Point3D();
         }
-        Vector3DArray.eighteen(array,tri, masP);
+        array.eighteen(tri, masP);
         for(size = 0; size < masP.length; ++size) {
             masP[size].printPoint();
         }
 
         // блок 2
-        System.out.print("размер массива ");
+        /*System.out.print("размер массива ");
         size = sc.nextInt();
         double[] arr = new double[size];
         System.out.println("ввод массива");
@@ -118,11 +113,11 @@ public class Main {
         System.out.println("все ли элементы четные " + Block2.thirteen(arr, bo));
         Block2.reverse(arr);
         System.out.println("массив в обатном порядке ");
-        Block2.printMas(arr);
+        Block2.printMas(arr);*/
 
         // блок 1
 
-        Block1.tabulSin(-1, 0.5, 0.2);
+        /*Block1.tabulSin(-1, 0.5, 0.2);
         double sT;
         sT=Block1.seriesTailor(0.05,3);
         System.out.println(sT);
@@ -130,7 +125,7 @@ public class Main {
         solve[0]=0;
         solve[1]=0;
         Block1.solveEquation(5,2,7,2,1,9,solve);    // 5x + 2y = 7
-        System.out.printf("x = "+solve[0]+" y = "+solve[1]);                 // 2x + y  = 9
+        System.out.printf("x = "+solve[0]+" y = "+solve[1]);          */       // 2x + y  = 9
 
     }
 }

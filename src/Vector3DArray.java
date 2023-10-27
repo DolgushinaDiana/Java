@@ -1,6 +1,14 @@
 public class Vector3DArray {
 
-    public static int lenMas(Vector3D[] arr) {        // N2
+    private Vector3D[] arr;
+
+    public Vector3DArray(int n){
+        arr = new Vector3D[n];
+        for (int i=0;i<n;i++){
+            arr[i]=new Vector3D();
+        }
+    }
+    public int lenMas() {        // N2
         int count = 0;
         for (Vector3D item : arr) {
             count++;
@@ -8,19 +16,19 @@ public class Vector3DArray {
         return count;
     }
 
-    public static void printArray(Vector3D[] arr) {
+    public void printArray() {
         for(Vector3D item: arr) {
             item.printVec();
         }
     }
 
-    public static void replace(Vector3D[] arr,Vector3D c, int i) {
+    public void replace(Vector3D c, int i) {
         arr[i].setX(c.getX());
         arr[i].setY(c.getY());
         arr[i].setZ(c.getZ());
     }
 
-    public static double maxLen(Vector3D[] arr) {   // N4
+    public double maxLen() {   // N4
         double maxL = 0;
         for (Vector3D elem : arr) {
             if (elem.lenghtVec() > maxL) {
@@ -30,7 +38,7 @@ public class Vector3DArray {
         return maxL;
     }
 
-    public static int findVec(Vector3D[] arr,Vector3D a) {
+    public int findVec(Vector3D a) {
         int ind = -1;
         double x = a.getX();
         double y = a.getY();
@@ -45,19 +53,20 @@ public class Vector3DArray {
         return ind;
     }
 
-    public static Vector3D sumVector(Vector3D[] arr) {
+    public Vector3D sumVector() {
         Vector3D summa = new Vector3D();
 
         for(int i = 0; i < arr.length; ++i) {
-            Vector3DProcessor.sumVec(summa, arr[i], summa);
+            summa=Vector3DProcessor.sumVec(summa, arr[i]);
         }
 
         return summa;
     }
 
-    public static Vector3D linKom(Vector3D[] arr,double[] mas, Vector3D v) {
-        if (lenMas(arr) == mas.length) {
-            for(int i = 0; i < lenMas(arr); ++i) {
+    public Vector3D linKom(double[] mas) {
+        Vector3D v=new Vector3D();
+        if (lenMas() == mas.length) {
+            for(int i = 0; i < lenMas(); ++i) {
                 v.setX(v.getX() + arr[i].getX() * mas[i]);
                 v.setY(v.getY() + arr[i].getY() * mas[i]);
                 v.setZ(v.getZ() + arr[i].getZ() * mas[i]);
@@ -67,8 +76,8 @@ public class Vector3DArray {
         return v;
     }
 
-    public static Point3D[] eighteen(Vector3D[] arr,Point3D p, Point3D[] mas) {
-        for(int i = 0; i < lenMas(arr); ++i) {
+    public Point3D[] eighteen(Point3D p, Point3D[] mas) {
+        for(int i = 0; i < lenMas(); ++i) {
             mas[i].setX(p.getX() + arr[i].getX());
             mas[i].setY(p.getY() + arr[i].getY());
             mas[i].setZ(p.getZ() + arr[i].getZ());
