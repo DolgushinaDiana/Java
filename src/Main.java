@@ -22,9 +22,9 @@ public class Main {
         System.out.println("равны ли вектора(равен сам себе) " + twoV.ravenstvoVecrorov(twoV));
         System.out.println("равны ли вектора(разные) " + twoV.ravenstvoVecrorov(triV));
         System.out.println("длина вектора: " + lenVec);
-        Vector3D summa = new Vector3D();
-        Vector3D buff = new Vector3D();
-        Vector3D ras = new Vector3D();
+        Vector3D summa;
+        Vector3D buff;
+        Vector3D ras;
         summa=Vector3DProcessor.sumVec(twoV, triV);
         System.out.print("сумма векторов: ");
         summa.printVec();
@@ -84,17 +84,17 @@ public class Main {
         lK=array.linKom(mas2);
         System.out.print("линейная комбинация векторов (попытка 2) ");
         lK.printVec();
-        Point3D[] masP = new Point3D[array.lenMas()];
         System.out.print("сдвигаем точку ");
         tri.printPoint();
-        int size;
-        for(size = 0; size < masP.length; ++size) {
-            masP[size] = new Point3D();
+
+        Point3D[] eighteen = array.eighteen(tri);
+        for(Point3D point3D: eighteen){
+            point3D.printPoint();
         }
-        array.eighteen(tri, masP);
-        for(size = 0; size < masP.length; ++size) {
-            masP[size].printPoint();
-        }
+
+
+
+
 
         // блок 2
         /*System.out.print("размер массива ");

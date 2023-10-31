@@ -8,12 +8,8 @@ public class Vector3DArray {
             arr[i]=new Vector3D();
         }
     }
-    public int lenMas() {        // N2
-        int count = 0;
-        for (Vector3D item : arr) {
-            count++;
-        }
-        return count;
+    public int lenMas() {
+        return arr.length;
     }
 
     public void printArray() {
@@ -76,11 +72,13 @@ public class Vector3DArray {
         return v;
     }
 
-    public Point3D[] eighteen(Point3D p, Point3D[] mas) {
-        for(int i = 0; i < lenMas(); ++i) {
-            mas[i].setX(p.getX() + arr[i].getX());
-            mas[i].setY(p.getY() + arr[i].getY());
-            mas[i].setZ(p.getZ() + arr[i].getZ());
+    public Point3D[] eighteen(Point3D p) {
+        Point3D[] mas = new Point3D[arr.length];
+        for(int i = 0; i < arr.length; i++) {
+            mas[i] = new Point3D(
+                    p.getX() + arr[i].getX(),
+                    p.getY() + arr[i].getY(),
+                    p.getZ() + arr[i].getZ());
         }
         return mas;
     }

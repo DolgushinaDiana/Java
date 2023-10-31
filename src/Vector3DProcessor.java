@@ -1,9 +1,8 @@
 public class Vector3DProcessor {
-    public Vector3DProcessor() {
-    }
+
 
     public static Vector3D sumVec(Vector3D a, Vector3D b) {
-        Vector3D c=new Vector3D();
+        Vector3D c = new Vector3D();
         c.setX(a.getX() + b.getX());
         c.setY(a.getY() + b.getY());
         c.setZ(a.getZ() + b.getZ());
@@ -11,7 +10,7 @@ public class Vector3DProcessor {
     }
 
     public static Vector3D rasVec(Vector3D a, Vector3D b) {
-        Vector3D c=new Vector3D();
+        Vector3D c = new Vector3D();
         c.setX(a.getX() - b.getX());
         c.setY(a.getY() - b.getY());
         c.setZ(a.getZ() - b.getZ());
@@ -23,7 +22,7 @@ public class Vector3DProcessor {
     }
 
     public static Vector3D vecPro(Vector3D a, Vector3D b) {
-        Vector3D c=new Vector3D();
+        Vector3D c = new Vector3D();
         c.setX(a.getY() * b.getZ() - a.getZ() * b.getY());
         c.setY(a.getX() * b.getZ() - a.getZ() * b.getX());
         c.setZ(a.getX() * b.getY() - a.getY() * b.getX());
