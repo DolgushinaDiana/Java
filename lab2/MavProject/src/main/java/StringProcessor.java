@@ -1,5 +1,5 @@
 public class StringProcessor {
-    public String first(String s, int n){
+    public String copyes(String s, int n){          // +
         String res=new String();
         for (int i=0;i<n;i++){
             res=res.concat(s);
@@ -9,7 +9,7 @@ public class StringProcessor {
     public int second(String set,String gor){
         int n=0;
         for (int i=0;i<set.length();i++){
-            if ((set.indexOf(gor,i)!=-1)&&(!"".equals(gor))){
+            if ((set.indexOf(gor,i)!=-1)&&(!"".equals(gor))){           // ~
                 n++;
                 System.out.println(i);
                 i+=set.indexOf(gor,i);
@@ -18,10 +18,16 @@ public class StringProcessor {
         }
         return n;
     }
-    public String third(String s){
-        String res=s.replace("1","один");
+    public String replace123(String s){
+        String res=s.replace("1","один");           // +
         res=res.replace("2","два");
         res=res.replace("3","три");
         return res;
+    }
+    public StringBuilder everSecond(StringBuilder s){               // +
+        for (int i=1;i<s.length();i++){
+            s.deleteCharAt(i);
+        }
+        return s;
     }
 }
