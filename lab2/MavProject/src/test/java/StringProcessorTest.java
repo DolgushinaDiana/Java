@@ -4,10 +4,10 @@ import static org.junit.Assert.assertEquals;
 
 public class StringProcessorTest {
     @Test
-    public void firstTest(){
+    public void copyesTest(){
         StringProcessor st=new StringProcessor();
-        assertEquals("arar",st.first("ar",2));
-        assertEquals("   ",st.first(" ",3));
+        assertEquals("arar",st.copyes("ar",2));
+        assertEquals("   ",st.copyes(" ",3));
     }
     @Test
     public void secondTest(){
@@ -19,10 +19,20 @@ public class StringProcessorTest {
         assertEquals(3,st.second("aardfsa","a"));
     }
     @Test
-    public void thirdTest(){
+    public void replace123Test(){
         StringProcessor st=new StringProcessor();
-        assertEquals("одинодинтри45два",st.third("113452"));
-        assertEquals("00000",st.third("00000"));
-        assertEquals("",st.third(""));
+        assertEquals("одинодинтри45два",st.replace123("113452"));
+        assertEquals("00000",st.replace123("00000"));
+        assertEquals("",st.replace123(""));
     }
+
+    @Test
+    public void everSecondTest(){
+        StringProcessor st=new StringProcessor();
+        assertEquals("aaaaa",st.everSecond(new StringBuilder("ababababab")).toString());
+        assertEquals("13579",st.everSecond(new StringBuilder("123456789")).toString());
+        assertEquals("",st.everSecond(new StringBuilder("")).toString());
+        assertEquals("  ",st.everSecond(new StringBuilder("   ")).toString());
+    }
+
 }
