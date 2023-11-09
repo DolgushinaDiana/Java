@@ -77,4 +77,5 @@ public class Payment {
     public void setFIO(String FIO) {
         this.FIO = FIO;
     }
+
 }

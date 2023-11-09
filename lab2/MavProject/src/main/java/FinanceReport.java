@@ -4,29 +4,34 @@ public class FinanceReport {
     private int month;
     private int year;
     private Payment[] payment;
-
-
-    public FinanceReport(int i) {
-        payment = new Payment[i];
-
+    public FinanceReport(int n) {
+        payment = new Payment[n];
         for (int i = 0; i < payment.length; i++) {
-            payment[i]=new int;
+            payment[i]=new Payment("",0,0,0,0);
         }
     }
-
     public int quantity() {
         return payment.length;
     }
 
     public Payment iPayRead(int i){
-        return payment[i];
-    }
-    public Payment iPayWright(int i){
+        System.out.println(payment[i].toString());
         return payment[i];
     }
 
-    public String toString() {
-        return String.format("Плательщик: %s, дата: %d.%d.%d, Платежи: %d", getFullName(), getDay(), getMonth(), getYear());
+    /*public Payment iPayChange(int i){
+        payment[i].setFIO();
+        payment[i].setDay(int d);
+        return payment[i];
+    }*/
+
+    public String toStringReport(int n) {
+        String st=String.format("[Автор: %s, дата: %d.%d.%d, Платежи: \n [", getFullName(), getDay(), getMonth(), getYear());
+        for (int i=0;i<n;i++){
+            st+=payment[i].toString();
+        }
+        st+="]]";
+        return st;
     }
     /*@Override
     public Object clone(){
@@ -63,6 +68,14 @@ public class FinanceReport {
 
     public void setDay(int day) {
         this.day = day;
+    }
+
+    public Payment getPayment(int i) {
+        return payment[i];
+    }
+
+    public void setPayment(Payment[] payment) {
+        this.payment = payment;
     }
 
     public String getFullName() {
