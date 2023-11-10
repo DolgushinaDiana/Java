@@ -16,11 +16,8 @@ public class PaymentTest {
     }
     @Test           // +
     public void toStringTest(){
-
-        assertEquals("Плательщик: Fio, дата: 23.5.34, сумма: 1000 руб. 0 коп.\n",new Payment("Fio",23,5,34,100000).toString());
-        assertEquals("Плательщик: Fio, дата: 23.5.34, сумма: 1234 руб. 56 коп.\n",new Payment("Fio",23,5,34,123456).toString());
-
-
+        assertEquals("\tПлательщик: фабио, дата: 23.5.34, сумма: 1000 руб. 0 коп.\n",new Payment("фабио",23,5,34,100000).toString());
+        assertEquals("\tПлательщик: Fio, дата: 23.5.34, сумма: 1234 руб. 56 коп.\n",new Payment("Fio",23,5,34,123456).toString());
     }
     /*@Test
     public void */

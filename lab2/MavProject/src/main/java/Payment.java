@@ -1,14 +1,14 @@
 import java.util.Objects;
 
 public class Payment {
-    private String FIO;
+    private String fio;
     private int day;
     private int month;
     private int year;
     private int cache;
 
     public Payment(String FIO, int day, int month, int year, int cache) {
-        this.FIO = FIO;
+        this.fio = FIO;
         this.day = day;
         this.month = month;
         this.year = year;
@@ -17,7 +17,7 @@ public class Payment {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getFIO(), getDay(), getMonth(), getYear(), getCache());
+        return Objects.hash(getFio(), getDay(), getMonth(), getYear(), getCache());
     }
 
     @Override
@@ -30,12 +30,12 @@ public class Payment {
                 getMonth() == payment.getMonth() &&
                 getYear() == payment.getYear() &&
                 getCache() == payment.getCache() &&
-                Objects.equals(getFIO(), payment.getFIO());
+                Objects.equals(getFio(), payment.getFio());
     }
 
     @Override
     public String toString() {
-        return String.format("Плательщик: %s, дата: %d.%d.%d, сумма: %d руб. %d коп.\n", getFIO(), getDay(), getMonth(), getYear(), (getCache() / 100), getCache() % 100);
+        return String.format("\tПлательщик: %s, дата: %d.%d.%d, сумма: %d руб. %d коп.\n", getFio(), getDay(), getMonth(), getYear(), (getCache() / 100), getCache() % 100);
     }
 
     public int getCache() {
@@ -70,12 +70,12 @@ public class Payment {
         this.day = day;
     }
 
-    public String getFIO() {
-        return FIO;
+    public String getFio() {
+        return fio;
     }
 
-    public void setFIO(String FIO) {
-        this.FIO = FIO;
+    public void setFio(String fio) {
+        this.fio = fio;
     }
 
 }
