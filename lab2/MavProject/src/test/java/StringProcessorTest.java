@@ -6,46 +6,55 @@ import static org.junit.Assert.*;
 public class StringProcessorTest {
     @Test(expected = Exception.class)
     public void copyesTest() {
-        StringProcessor st = new StringProcessor();
-        assertEquals("arar", st.copyes("ar", 2));
-        assertEquals("   ", st.copyes(" ", 3));
-        assertEquals("", st.copyes("a", 0));
-        assertEquals("отрицательное число", st.copyes("aa", -1));
+        assertEquals("arar", StringProcessor.copyes("ar", 2));
+        assertEquals("   ", StringProcessor.copyes(" ", 3));
+        assertEquals("", StringProcessor.copyes("a", 0));
+        assertEquals("отрицательное число", StringProcessor.copyes("aa", -1));
+        assertEquals("link is null", StringProcessor.copyes(null, 5));
     }
 
-    @Test(expected = Exception.class)
+    @Test()
     public void secondTest() {
-        StringProcessor st = new StringProcessor();
-        StringProcessor s=null;
-        assertEquals(2, st.second("aaa", "aa"));
-        assertEquals(3, st.second("aabaaa", "aa"));
-        assertEquals(1, st.second("", ""));
-        assertEquals(3, st.second("aardfsa", "a"));
-        assertEquals("link is null", s.second("aardfsa", "a"));
-        assertEquals("пустая строка", st.second("aaa", ""));
+        assertEquals(3, StringProcessor.second("abababb", "ab"));
+        assertEquals(2, StringProcessor.second("aaa", "aa"));
+        assertEquals(3, StringProcessor.second("aabaaa", "aa"));
+        assertEquals(1, StringProcessor.second("", ""));
+        assertEquals(3, StringProcessor.second("aardfsa", "a"));
+        assertThrows(NullPointerException.class, () -> StringProcessor.second(null, "a"));
+//        assertEquals("пустая строка", StringProcessor.second("aaa", ""));
 
     }
+
+    @Test(expected = NullPointerException.class)
+    public void secondTaskException() {
+        StringProcessor.second(null, "a");
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void secondTaskException2() {
+        StringProcessor.second("aaa", "");
+    }
+
 
     @Test(expected = Exception.class)
     public void replace123Test() {
-        StringProcessor st = null;
-        String s=null;
-        assertEquals("одинодинтри45два", new StringProcessor().replace123("113452"));
-        assertEquals("00000", new StringProcessor().replace123("00000"));
-        assertEquals("", new StringProcessor().replace123(""));
-        assertEquals("один два", new StringProcessor().replace123("1 2"));
-        assertEquals("link is null", st.replace123(s));
+
+        assertEquals("одинодинтри45два", StringProcessor.replace123("113452"));
+        assertEquals("00000", StringProcessor.replace123("00000"));
+        assertEquals("", StringProcessor.replace123(""));
+        assertEquals("один два", StringProcessor.replace123("1 2"));
+        assertEquals("4657 7 ", StringProcessor.replace123("4657 7 "));
+        assertEquals("link is null", StringProcessor.replace123(null));
     }
 
     @Test(expected = Exception.class)
     public void everSecondTest() {
-        StringProcessor st = new StringProcessor();
-        StringBuilder s=null;
-        assertEquals("aaaaa", st.everSecond(new StringBuilder("ababababab")));
-        assertEquals("13579", st.everSecond(new StringBuilder("123456789")));
-        assertEquals("", st.everSecond(new StringBuilder("")));
-        assertEquals("  ", st.everSecond(new StringBuilder("   ")));
-        assertEquals("null", st.everSecond(s));
+        assertEquals("aaaaa", StringProcessor.everSecond(new StringBuilder("ababababab")));
+        assertEquals("13579", StringProcessor.everSecond(new StringBuilder("123456789")));
+        assertEquals("Java", StringProcessor.everSecond(new StringBuilder("Joacvda3")));
+        assertEquals("", StringProcessor.everSecond(new StringBuilder()));
+        assertEquals("  ", StringProcessor.everSecond(new StringBuilder("   ")));
+        assertEquals("link is null", StringProcessor.everSecond(null));
     }
 
 }

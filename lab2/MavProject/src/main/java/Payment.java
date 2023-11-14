@@ -35,7 +35,7 @@ public class Payment {
 
     @Override
     public String toString() {
-        return String.format("\tПлательщик: %s, дата: %d.%d.%d, сумма: %d руб. %d коп.\n", getFio(), getDay(), getMonth(), getYear(), (getCache() / 100), getCache() % 100);
+        return String.format("\tПлательщик: %s, дата: %d.%d%d.%d, сумма: %d руб. %d коп.\n", getFio(), getDay(), getMonth()/10,getMonth()%10, getYear(), (getCache() / 100), getCache() % 100);
     }
 
     public int getCache() {
