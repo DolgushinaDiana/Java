@@ -3,15 +3,15 @@ public class FinanceReport {
     private int day;
     private int month;
     private int year;
-    private Payment[] payments;
+    private Product[] Products;
 
     // конструктор
-    public FinanceReport(String s, int day, int month, int year, Payment[] payment) {
+    public FinanceReport(String s, int day, int month, int year, Product[] Product) {
         this.fullName = s;
         this.day = day;
         this.month = month;
         this.year = year;
-        this.payments = payment;
+        this.Products = Product;
     }
     // конструктор копирования   Как тебя сука делать?!
     public FinanceReport(FinanceReport orig) {
@@ -19,25 +19,23 @@ public class FinanceReport {
         day = orig.getDay();
         month = orig.getMonth();
         year = orig.getYear();
-        payments = new Payment[orig.reportCount()];
+        Products = new Product[orig.reportCount()];
         for (int i = 0; i < orig.reportCount(); i++) {
-            payments[i] = new Payment(orig.getPayment(i).getFio(),
-                    orig.getPayment(i).getDay(),
-                    orig.getPayment(i).getMonth(),
-                    orig.getPayment(i).getYear(),
-                    orig.getPayment(i).getCache());
+            Products[i] = new Product(orig.getPayment(i).getName(),
+                    orig.getPayment(i).getThat());
+
         }
     }
     //количество платежей
     public int reportCount() {
-        return payments.length;
+        return Products.length;
     }
     // отчет
     public String toStringReport() {
         if (getPayment() == null) throw new NullPointerException("link is null");
         StringBuilder st = new StringBuilder(String.format("Автор: %s, дата: %d.%d.%d, Платежи: \n", getFullName(), getDay(), getMonth(), getYear()));
-        for (Payment payment : payments) {
-            st.append(payment.toString());
+        for (Product Product : Products) {
+            st.append(Product.toString());
         }
         return st.toString();
     }
@@ -66,24 +64,22 @@ public class FinanceReport {
         this.day = day;
     }
 
-    public Payment getPayment(int i) {
-        return payments[i];
+    public Product getPayment(int i) {
+        return Products[i];
     }
 
-    public void setPayment(Payment[] payment) {
-        this.payments = payment;
+    public void setPayment(Product[] Product) {
+        this.Products = Product;
     }
 
-    public Payment[] getPayment() {
-        return payments;
+    public Product[] getPayment() {
+        return Products;
     }
 
-    public void setPayment(int i, Payment p) {
-        payments[i].setFio(p.getFio());
-        payments[i].setDay(p.getDay());
-        payments[i].setMonth(p.getMonth());
-        payments[i].setYear(p.getYear());
-        payments[i].setCache(p.getCache());
+    public void setPayment(int i, Product p) {
+        Products[i].setName(p.getName());
+        Products[i].setThat(p.getThat());
+
     }
 
     public String getFullName() {

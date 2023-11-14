@@ -3,12 +3,12 @@ import static org.junit.Assert.*;
 
 public class FinanceReportProcessorTest {
 
-    Payment[] pay={new Payment("Глазкова Алена Игоревна", 2,4,12,200),
-            new Payment("Долина Валерия",13,11,2015,30),
-            new Payment("Глазкова Алена Игоревна",10,10,10,4000),
-            new Payment("Долина Валерия ",20,2,20,500),
-            new Payment("Глазкова Алена Игоревна",20,2,20,6027),
-            new Payment("Глинин Василий Павлович",20,2,20,202)};
+    Product[] pay={new Product("Глазкова Алена Игоревна", 2,4,12,200),
+            new Product("Долина Валерия",13,11,2015,30),
+            new Product("Глазкова Алена Игоревна",10,10,10,4000),
+            new Product("Долина Валерия ",20,2,20,500),
+            new Product("Глазкова Алена Игоревна",20,2,20,6027),
+            new Product("Глинин Василий Павлович",20,2,20,202)};
 
     @Test(expected = Exception.class)
     public void taxesTest(){

@@ -1,81 +1,54 @@
 import java.util.Objects;
 
-public class товар {
-    private String fio;
-    private int day;
-    private int month;
-    private int year;
-    private int cache;
+public class Product {
+    private String name;
+    private String that;
 
-    public товар(String FIO, int day, int month, int year, int cache) {
-        this.fio = FIO;
-        this.day = day;
-        this.month = month;
-        this.year = year;
-        this.cache = cache;
+    public Product(String name, String that) {
+        this.name = name;
+        this.that = that;
+
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getFio(), getDay(), getMonth(), getYear(), getCache());
+        return Objects.hash(getName(), getThat());
     }
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
 
-        товар товар = (товар) obj;
-        return getDay() == товар.getDay() &&
-                getMonth() == товар.getMonth() &&
-                getYear() == товар.getYear() &&
-                getCache() == товар.getCache() &&
-                Objects.equals(getFio(), товар.getFio());
+        Product Product = (Product) obj;
+        return getThat() == Product.getThat() &&
+                Objects.equals(getName(), Product.getName());
     }
-
     @Override
     public String toString() {
-        return String.format("\tПлательщик: %s, дата: %d.%d.%d, сумма: %d руб. %d коп.\n", getFio(), getDay(), getMonth(), getYear(), (getCache() / 100), getCache() % 100);
+        return String.format("\tПлательщик: %s, дата: %d.%d.%d, сумма: %d руб. %d коп.\n", getName(), getThat());
+    }
+    public String getThat() {
+        return that;
+    }
+    public void setThat(String that) {
+        this.that = that;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getCache() {
-        return cache;
+}
+class WeightProduct extends Product {
+    public WeightProduct(String name, String that) {
+        super(name, that);
     }
+}
+class OneProduct extends Product{
 
-    public void setCache(int cache) {
-        this.cache = cache;
+    public OneProduct(String name, String that) {
+        super(name, that);
     }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public int getMonth() {
-        return month;
-    }
-
-    public void setMonth(int month) {
-        this.month = month;
-    }
-
-    public int getDay() {
-        return day;
-    }
-
-    public void setDay(int day) {
-        this.day = day;
-    }
-
-    public String getFio() {
-        return fio;
-    }
-
-    public void setFio(String fio) {
-        this.fio = fio;
-    }
-
 }

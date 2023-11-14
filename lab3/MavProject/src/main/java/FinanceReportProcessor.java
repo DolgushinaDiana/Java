@@ -4,16 +4,16 @@ public class FinanceReportProcessor {
         if (c==' ') throw new IllegalArgumentException("неверное значение символа");
         int i=0,size = 0;
         // размер массива для нового отчета
-        for (Payment pay : orig.getPayment()) {
-            if (pay.getFio().charAt(0) == c) {
+        for (Product pay : orig.getPayment()) {
+            if (pay.getName().charAt(0) == c) {
                 size++;
             }
         }
         // новый массив
-        Payment[] p = new Payment[size];
-        for (Payment pay : orig.getPayment()) {
-            if (pay.getFio().charAt(0) == c) {
-                p[i++]=new Payment(pay.getFio(), pay.getDay(), pay.getMonth(), pay.getYear(), pay.getCache());
+        Product[] p = new Product[size];
+        for (Product pay : orig.getPayment()) {
+            if (pay.getName().charAt(0) == c) {
+                p[i++]=new Product(pay.getName(), pay.getThat();
             }
         }
         return new FinanceReport(orig.getFullName(), orig.getDay(),orig.getMonth(), orig.getYear(), p);
@@ -25,16 +25,16 @@ public class FinanceReportProcessor {
         if (n<=0) throw new IllegalArgumentException("неверное значение вводимого числа");
         int i=0,size = 0;
         // размер массива для нового отчета
-        for (Payment pay : orig.getPayment()) {
+        for (Product pay : orig.getPayment()) {
             if (pay.getCache()<=n) {
                 size++;
             }
         }
         // новый массив
-        Payment[] p = new Payment[size];
-        for (Payment pay : orig.getPayment()) {
+        Product[] p = new Product[size];
+        for (Product pay : orig.getPayment()) {
             if (pay.getCache()<=n) {
-                p[i++]=new Payment(pay.getFio(), pay.getDay(), pay.getMonth(), pay.getYear(), pay.getCache());
+                p[i++]=new Product(pay.getName(), pay.getThat());
             }
         }
         return new FinanceReport(orig.getFullName(), orig.getDay(),orig.getMonth(), orig.getYear(), p);
