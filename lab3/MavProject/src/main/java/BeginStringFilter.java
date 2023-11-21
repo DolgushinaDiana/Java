@@ -1,5 +1,5 @@
 public class FinanceReportProcessor {
-    public static FinanceReport taxes(FinanceReport orig, char c) {
+    /*public static FinanceReport taxes(FinanceReport orig, char c) {
         if (orig == null) throw new NullPointerException("link is null");
         if (c==' ') throw new IllegalArgumentException("неверное значение символа");
         int i=0,size = 0;
@@ -38,5 +38,5 @@ public class FinanceReportProcessor {
             }
         }
         return new FinanceReport(orig.getFullName(), orig.getDay(),orig.getMonth(), orig.getYear(), p);
-    }
+    }*/
 }
