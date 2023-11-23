@@ -7,7 +7,6 @@ public class Product {
     public Product(String name, String that) {
         this.name = name;
         this.that = that;
-
     }
 
     @Override
@@ -15,18 +14,18 @@ public class Product {
         return Objects.hash(getName(), getThat());
     }
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-
-        Product Product = (Product) obj;
-        return getThat() == Product.getThat() &&
-                Objects.equals(getName(), Product.getName());
-    }
-    @Override
     public String toString() {
-        return String.format("\tПлательщик: %s, дата: %d.%d.%d, сумма: %d руб. %d коп.\n", getName(), getThat());
+        return String.format("название %s\n описание %s\n", getName(), getThat());
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return Objects.equals(getName(), product.getName()) && Objects.equals(getThat(), product.getThat());
+    }
+
     public String getThat() {
         return that;
     }
@@ -41,14 +40,4 @@ public class Product {
     }
 
 }
-class WeightProduct extends Product {
-    public WeightProduct(String name, String that) {
-        super(name, that);
-    }
-}
-class OneProduct extends Product{
 
-    public OneProduct(String name, String that) {
-        super(name, that);
-    }
-}

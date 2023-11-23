@@ -2,11 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f91a7c1-24bf-4f1a-b31d-0e1c216dca82" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../lab3/lab3/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../lab3/lab3/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../lab3/lab3/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../lab3/lab3/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/OneProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/PackWeightProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/Package.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/Partia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/ServiceProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/java/BeginStringFilterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab2/MavProject/src/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lab2/MavProject/src/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/FinanceReport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/FinanceReportProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/BeginStringFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/StringProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/Filter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/WeightProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/WeightProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/java/FinanceReportProcessorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/java/FinanceReportProcessorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/java/FinanceReportTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/java/FinanceReportTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/java/PaymentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/java/PaymentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/java/StringProcessorTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,24 +36,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "lab3",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/user/IdeaProjects/lab2",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;lab3&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/user/IdeaProjects/Java/lab3/MavProject&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
         <option value="jdk-21.0.1-openjdk-21.0.1-8336523bb0d9-cc9f59e6" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-d71feba1c485-9e3e62bd" />
       </set>
     </attachedChunks>
   </component>
