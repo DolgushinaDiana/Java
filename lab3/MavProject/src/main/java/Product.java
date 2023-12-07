@@ -13,6 +13,7 @@ public class Product {
     public int hashCode() {
         return Objects.hash(getName(), getThat());
     }
+
     @Override
     public String toString() {
         return String.format("название %s\n описание %s\n", getName(), getThat());
@@ -29,12 +30,15 @@ public class Product {
     public String getThat() {
         return that;
     }
+
     public void setThat(String that) {
         this.that = that;
     }
+
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }

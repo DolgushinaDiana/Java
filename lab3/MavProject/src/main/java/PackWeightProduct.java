@@ -1,11 +1,13 @@
-public class PackWeightProduct extends WeightProduct implements Packing{
+public class PackWeightProduct extends WeightProduct implements Packing {
     private Package pac;
     private int weight;
-    public PackWeightProduct(WeightProduct product, Package pac,int weight) {
+
+    public PackWeightProduct(WeightProduct product, Package pac, int weight) {
         super(product.getName(), product.getThat());
-        this.pac=pac;
-        this.weight=weight;
+        this.pac = pac;
+        this.weight = weight;
     }
+
     public int getWeight() {
         return weight;
     }
@@ -26,16 +28,16 @@ public class PackWeightProduct extends WeightProduct implements Packing{
 
     @Override
     public String toString() {
-        return String.format("упаковка весового товара %s \nвес %d\n",getName(),getWeight());
+        return String.format("упаковка весового товара %s \nвес %d\n", getName(), getWeight());
     }
+
     @Override
     public int findNetto() {
-
         return weight;
     }
 
     @Override
     public int findBrutto() {
-        return weight+ pac.getMass();
+        return weight + pac.getMass();
     }
 }

@@ -4,14 +4,14 @@ public class Package {
     private String name;
     private int mass;
 
-    public Package(String name,int mass) {
+    public Package(String name, int mass) {
         this.mass = mass;
-        this.name=name;
+        this.name = name;
     }
 
     @Override
     public String toString() {
-        return String.format("упаковка %s с массой %d\n",getName(),getMass());
+        return String.format("упаковка %s с массой %d\n", getName(), mass);
     }
 
     @Override
@@ -24,22 +24,15 @@ public class Package {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getMass());
+        return Objects.hash(getName(), mass);
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getMass() {
         return mass;
     }
 
-    public void setMass(int mass) {
-        this.mass = mass;
-    }
 }

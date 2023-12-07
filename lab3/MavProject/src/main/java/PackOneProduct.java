@@ -2,16 +2,23 @@ public class PackOneProduct extends OneProduct implements Packing {
     private int count;
     private Package pac;
 
-    public PackOneProduct(OneProduct product, Package pac,int count) {
+    public PackOneProduct(OneProduct product, Package pac, int count) {
         super(product.getName(), product.getThat(), product.getMass());
-        this.pac=pac;
-        this.count=count;
+        this.pac = pac;
+        this.count = count;
     }
+
     public int findNetto() {
-        return count*getMass();
+        return count * getMass();
     }
+
     public int findBrutto() {
-        return count*getMass()+pac.getMass();
+        return count * getMass() + pac.getMass();
+    }
+
+    @Override
+    public String toString() {
+        return String.format("упаковка штучного товара %s \nколичество %d\n", getName(), count);
     }
 
     @Override
@@ -19,9 +26,8 @@ public class PackOneProduct extends OneProduct implements Packing {
         return super.getName();
     }
 
-    @Override
     public int getMass() {
-        return pac.getMass();
+        return super.getMass();
     }
 
     @Override
@@ -36,11 +42,4 @@ public class PackOneProduct extends OneProduct implements Packing {
     public int getCount() {
         return count;
     }
-
-    @Override
-    public String toString() {
-        return String.format("упаковка штучного товара %s \nколичество %d\n",getName(),count);
-    }
-
-
 }
