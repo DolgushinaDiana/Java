@@ -11,17 +11,16 @@ public class KvadratTrehchlen {
 
     public double[] solve(){
         double d=Math.sqrt(getB()*getB()-4*getA()*getC());
-        double[] mas={(-getB()+d)/2/getA(),(-getB()-d)/2/getA()};
+        double[] mas= {(-getB()+d)/2/getA(),(-getB()-d)/2/getA()};
         return mas;
     }
 
     @Override
     public String toString() {
-        return "KvadratTrehchlen{" +
-                "a=" + a +
-                ", b=" + b +
-                ", c=" + c +
-                '}';
+        String temp="";
+        temp+=(a<0 ? "-":"");
+        if (a>0) temp="%d";
+        return String.format("%dx^2 + %dx + %d",a,b,c);
     }
 
     public int getB() {

@@ -6,11 +6,7 @@ public class SecondClass {
     }
 
     public double TheBiggestHuy(){
-        double big=mas[0];
-        for (){
-
-        }
-        return 0;
+        return Math.max(ochko.solve()[0], ochko.solve()[1]);
     }
 
     public int getA(){
