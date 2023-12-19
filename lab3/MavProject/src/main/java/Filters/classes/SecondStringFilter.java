@@ -1,3 +1,7 @@
+package Filters.classes;
+
+import Filters.Filter;
+
 public class SecondStringFilter implements Filter {
     private char pattern;
     private int n;

@@ -1,3 +1,7 @@
+package Filters.classes;
+
+import Filters.Filter;
+
 public class BeginStringFilter implements Filter {
     private String pattern;
 

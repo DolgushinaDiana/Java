@@ -1,3 +1,5 @@
+package Products;
+
 import java.util.Objects;
 
 public class OneProduct extends Product {

@@ -1,4 +1,6 @@
-import java.util.Objects;
+package Products;
+
+import Products.Product;
 
 public class WeightProduct extends Product {
 

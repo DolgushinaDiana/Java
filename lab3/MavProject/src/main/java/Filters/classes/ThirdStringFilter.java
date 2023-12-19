@@ -1,3 +1,7 @@
+package Filters.classes;
+
+import Filters.Filter;
+
 public class ThirdStringFilter implements Filter {
 
     private String pattern;

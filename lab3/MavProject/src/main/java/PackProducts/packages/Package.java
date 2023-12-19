@@ -1,3 +1,5 @@
+package PackProducts.packages;
+
 import java.util.Objects;
 
 public class Package {

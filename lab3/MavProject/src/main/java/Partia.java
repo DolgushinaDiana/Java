@@ -1,3 +1,5 @@
+import PackProducts.Packing;
+
 public class Partia {
 
     private String describe;

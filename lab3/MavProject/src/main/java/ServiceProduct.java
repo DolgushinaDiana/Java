@@ -1,3 +1,6 @@
+import Filters.classes.BeginStringFilter;
+import PackProducts.Packing;
+
 public class ServiceProduct {
     public static int countByFilter(Partia pac, BeginStringFilter fil) {
         int count = 0;

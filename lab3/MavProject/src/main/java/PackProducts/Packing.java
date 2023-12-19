@@ -1,3 +1,5 @@
+package PackProducts;
+
 public interface Packing {
     int findNetto();
     int findBrutto();

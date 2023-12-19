@@ -1,3 +1,9 @@
+package PackProducts.packages;
+
+import PackProducts.Packing;
+import PackProducts.packages.Package;
+import Products.OneProduct;
+
 public class PackOneProduct extends OneProduct implements Packing {
     private int count;
     private Package pac;
