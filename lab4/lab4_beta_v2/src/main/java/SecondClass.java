@@ -9,7 +9,7 @@ public class SecondClass {
         return Math.max(ochko.solve()[0], ochko.solve()[1]);
     }
 
-    public int getA(){
+    public double getA(){
         return ochko.getA();
     }
     public KvadratTrehchlen getOchko() {

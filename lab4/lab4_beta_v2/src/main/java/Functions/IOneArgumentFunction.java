@@ -1,5 +1,7 @@
+package Functions;
+
 public interface IOneArgumentFunction {
-    double getA();
-    double getB();
+    double getR();
+    double getL();
     double calculate(double x);
 }

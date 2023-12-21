@@ -1,7 +1,6 @@
 import org.junit.Test;
 
-public class SecondClassTest {
-
+public class SeconfTest {
     @Test
     public void Test(){
         KvadratTrehchlen op=new KvadratTrehchlen(4,6,8);
