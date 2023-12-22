@@ -12,8 +12,8 @@ public class DivFunction implements IOneArgumentFunction {
         this.b=b;
         this.c=c;
         this.d=d;
-        this.r=r;
-        this.l=l;
+        this.r=Math.max(r,l);
+        this.l=Math.min(r,l);
     }
     public double getC() {
         return c;
@@ -28,10 +28,13 @@ public class DivFunction implements IOneArgumentFunction {
         return b;
     }
 
+
+    @Override
     public double getR() {
         return r;
     }
 
+    @Override
     public double getL() {
         return l;
     }

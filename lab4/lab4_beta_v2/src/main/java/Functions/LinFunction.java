@@ -8,8 +8,8 @@ public class LinFunction implements IOneArgumentFunction {
     public LinFunction(double a, double b,double r,double l){
         this.a=a;
         this.b=b;
-        this.r=r;
-        this.l=l;
+        this.r=Math.max(r,l);
+        this.l=Math.min(r,l);
     }
     public double getA() {
         return a;
@@ -19,10 +19,12 @@ public class LinFunction implements IOneArgumentFunction {
         return b;
     }
 
+    @Override
     public double getR() {
         return r;
     }
 
+    @Override
     public double getL() {
         return l;
     }
