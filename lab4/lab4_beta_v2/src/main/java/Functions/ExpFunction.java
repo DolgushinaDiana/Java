@@ -9,8 +9,8 @@ public class ExpFunction implements IOneArgumentFunction {
     public ExpFunction(double a, double b, double r, double l) {
         this.a = a;
         this.b = b;
-        this.r=Math.max(r,l);
-        this.l=Math.min(r,l);
+        this.r = Math.max(r, l);
+        this.l = Math.min(r, l);
     }
 
     public double getA() {
@@ -33,6 +33,7 @@ public class ExpFunction implements IOneArgumentFunction {
 
     @Override
     public double calculate(double x) {
+        if (x > r || x < l) throw new IllegalArgumentException();
         return a * Math.exp(x) + b;
     }
 }

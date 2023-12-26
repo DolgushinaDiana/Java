@@ -1,6 +1,4 @@
 package Functionals;
-
-import Functionals.IFunctional;
 import Functions.IOneArgumentFunction;
 
 public class Integral<T extends IOneArgumentFunction> implements IFunctional<T> {
@@ -16,12 +14,11 @@ public class Integral<T extends IOneArgumentFunction> implements IFunctional<T> 
 
     @Override
     public double functional(T f) {
-        if (f.getR() > right || f.getL() < left) throw new IndexOutOfBoundsException();
+        if (f.getR() < right || f.getL() > left) throw new IndexOutOfBoundsException();
         double d = Math.abs(right - left) / n;
         double res = 0;
         for (int i = 0; i < n; i++) {
             res += f.calculate(left + d * (i + 0.5));
-
         }
         return res * d;
     }
