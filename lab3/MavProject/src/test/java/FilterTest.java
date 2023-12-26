@@ -1,11 +1,14 @@
-import org.junit.Test;
 
+import Filters.classes.BeginStringFilter;
+import Filters.classes.SecondStringFilter;
+import Filters.classes.ThirdStringFilter;
+import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class FilterTest {
 
     @Test
-    public void secondApplyTest(){
+    public void secondApplyTest(){          // проверяет что строка содержится n раз
         String str="abcdcba";
         SecondStringFilter fil1=new SecondStringFilter('c',2);
         SecondStringFilter fil2=new SecondStringFilter('c',3);
@@ -13,7 +16,7 @@ public class FilterTest {
         assertFalse(fil2.apply(str));
     }
     @Test
-    public void thirdApplyTest(){
+    public void thirdApplyTest(){           // проверяет что индекс первого вхождения строки равен n
         String str="abcdcba";
         String str2="ababssddd";
         ThirdStringFilter fil1=new ThirdStringFilter("ab",1);

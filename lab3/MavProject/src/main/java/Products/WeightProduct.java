@@ -4,12 +4,12 @@ import Products.Product;
 
 public class WeightProduct extends Product {
 
-    public WeightProduct(String name, String that) {       // constructor
-        super(name, that);
+    public WeightProduct(String name, String description) {       // constructor
+        super(name, description);
     }
 
     public String toString() {
-        return String.format("название весового товара %s\nописание %s\n", getName(), getThat());
+        return String.format("название весового товара %s\nописание %s\n", getName(), getDescription());
     }
 
     @Override
@@ -28,7 +28,7 @@ public class WeightProduct extends Product {
     }
 
     @Override
-    public String getThat() {
-        return super.getThat();
+    public String getDescription() {
+        return super.getDescription();
     }
 }

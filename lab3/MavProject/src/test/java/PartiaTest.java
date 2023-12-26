@@ -1,5 +1,11 @@
+import Packages.classes.PackOneProduct;
+import Packages.classes.PackWeightProduct;
+import Packages.classes.Package;
+import Packages.Packing;
+import Products.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
+
 public class PartiaTest {
     @Test
     public void bruttoTest(){

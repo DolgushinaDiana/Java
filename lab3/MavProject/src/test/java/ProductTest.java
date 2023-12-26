@@ -1,6 +1,12 @@
+
+import Packages.classes.PackOneProduct;
+import Packages.classes.PackWeightProduct;
+import Packages.classes.Package;
+import Packages.Packing;
+import Products.OneProduct;
+import Products.Product;
+import Products.WeightProduct;
 import org.junit.Test;
-
-
 import static org.junit.Assert.*;
 
 public class ProductTest {
@@ -10,8 +16,7 @@ public class ProductTest {
     Product p2 = new OneProduct("орех", "орехи", 3);
     WeightProduct product1 = new WeightProduct("арбуз", "ягоды");
     OneProduct product2 = new OneProduct("мясо", "мясо", 3);
-    Packing packing1 = new PackOneProduct(product2, pac1, 3);
-    Packing packing2 = new PackWeightProduct(product1, pac1, 7);
+
     Product[] products = {new Product("кабачок", "овощи"), new WeightProduct("яблоки", "фрукты")};
 
     @Test

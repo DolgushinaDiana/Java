@@ -1,11 +1,11 @@
 import Filters.classes.BeginStringFilter;
-import PackProducts.Packing;
+import Packages.Packing;
 
 public class ServiceProduct {
     public static int countByFilter(Partia pac, BeginStringFilter fil) {
         int count = 0;
-        for (Packing p : pac.getPac()) {
-            if (fil.apply(p.getPac().getName())) {
+        for (Packing p : pac.getPacking()) {
+            if (fil.apply(p.getName())) {
                 count++;
             }
         }

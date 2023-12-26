@@ -1,7 +1,7 @@
-package PackProducts.packages;
+package Packages.classes;
 
-import PackProducts.Packing;
-import PackProducts.packages.Package;
+import Packages.Packing;
+import Packages.classes.Package;
 import Products.OneProduct;
 
 public class PackOneProduct extends OneProduct implements Packing {
@@ -9,7 +9,7 @@ public class PackOneProduct extends OneProduct implements Packing {
     private Package pac;
 
     public PackOneProduct(OneProduct product, Package pac, int count) {
-        super(product.getName(), product.getThat(), product.getMass());
+        super(product.getName(), product.getDescription(), product.getMass());
         this.pac = pac;
         this.count = count;
     }
@@ -37,8 +37,8 @@ public class PackOneProduct extends OneProduct implements Packing {
     }
 
     @Override
-    public String getThat() {
-        return super.getThat();
+    public String getDescription() {
+        return super.getDescription();
     }
 
     public Package getPac() {

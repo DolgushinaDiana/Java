@@ -5,8 +5,8 @@ import java.util.Objects;
 public class OneProduct extends Product {
     private int mass;
 
-    public OneProduct(String name, String that, int mass) {
-        super(name, that);
+    public OneProduct(String name, String description, int mass) {
+        super(name, description);
         this.mass = mass;
     }
 
@@ -15,8 +15,8 @@ public class OneProduct extends Product {
     }
 
     @Override
-    public String getThat() {
-        return super.getThat();
+    public String getDescription() {
+        return super.getDescription();
     }
 
     @Override
@@ -26,7 +26,7 @@ public class OneProduct extends Product {
 
     @Override
     public String toString() {
-        return String.format("название штучного товара %s\n описание %s\n вес одной штуки %d\n", getName(), getThat(), getMass());
+        return String.format("название штучного товара %s\n описание %s\n вес одной штуки %d\n", getName(), getDescription(), getMass());
     }
 
     @Override

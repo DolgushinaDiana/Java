@@ -1,7 +1,7 @@
-package PackProducts.packages;
+package Packages.classes;
 
-import PackProducts.Packing;
-import PackProducts.packages.Package;
+import Packages.Packing;
+import Packages.classes.Package;
 import Products.WeightProduct;
 
 public class PackWeightProduct extends WeightProduct implements Packing {
@@ -9,7 +9,7 @@ public class PackWeightProduct extends WeightProduct implements Packing {
     private int weight;
 
     public PackWeightProduct(WeightProduct product, Package pac, int weight) {
-        super(product.getName(), product.getThat());
+        super(product.getName(), product.getDescription());
         this.pac = pac;
         this.weight = weight;
     }
@@ -23,8 +23,8 @@ public class PackWeightProduct extends WeightProduct implements Packing {
     }
 
     @Override
-    public String getThat() {
-        return super.getThat();
+    public String getDescription() {
+        return super.getDescription();
     }
 
     @Override

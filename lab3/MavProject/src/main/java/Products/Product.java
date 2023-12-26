@@ -4,21 +4,21 @@ import java.util.Objects;
 
 public class Product {
     private String name;
-    private String that;
+    private String description;
 
     public Product(String name, String that) {
         this.name = name;
-        this.that = that;
+        this.description = that;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getThat());
+        return Objects.hash(getName(), getDescription());
     }
 
     @Override
     public String toString() {
-        return String.format("название %s\n описание %s\n", getName(), getThat());
+        return String.format("название %s\n описание %s\n", getName(), getDescription());
     }
 
     @Override
@@ -26,15 +26,15 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return Objects.equals(getName(), product.getName()) && Objects.equals(getThat(), product.getThat());
+        return Objects.equals(getName(), product.getName()) && Objects.equals(getDescription(), product.getDescription());
     }
 
-    public String getThat() {
-        return that;
+    public String getDescription() {
+        return description;
     }
 
-    public void setThat(String that) {
-        this.that = that;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getName() {

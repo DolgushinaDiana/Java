@@ -1,13 +1,12 @@
-import PackProducts.Packing;
+import Packages.Packing;
 
 public class Partia {
-
-    private String describe;
+    private String description;
     private Packing[] pac;
 
     public Partia(String s, Packing... pack) {
         int i = 0;
-        describe = s;
+        description = s;
         pac = pack;
         for (Packing p : pack) {
             pac[i++] = p;
@@ -24,14 +23,15 @@ public class Partia {
 
     @Override
     public String toString() {
-        StringBuilder st = new StringBuilder(String.format("партия %s\n упакованные товары:\n", describe));
+        StringBuilder st = new StringBuilder(String.format("партия %s\n упакованные товары:\n", description));
         for (Packing p : pac) {
             st.append("\t").append(p.toString());
         }
         return st.toString();
     }
 
-    public Packing[] getPac() {
+
+    public Packing[] getPacking() {
         return pac;
     }
 }
