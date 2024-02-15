@@ -21,17 +21,19 @@ public class CollectionsDemo {
         }
         return fin;
     }
-
+            // fuck you asshole
             // 4
     public static ArrayList<HashSet<Integer>> noTouch(HashSet<Integer> list, ArrayList<HashSet<Integer>> arr) {
         ArrayList<HashSet<Integer>> fin = new ArrayList<>();
-        boolean t=true;
         HashSet<Integer> h=new HashSet<>(list);
         for (HashSet<Integer> f: arr) {
-            if (h.retainAll(f)) fin.add(h);
+            HashSet<Integer> c=new HashSet<>(f);
+            /*c= (HashSet<Integer>) f.clone();*/
+            if (!c.retainAll(list)) fin.add(h);
+            /*if (h.retainAll(f)) fin.add(h);*/
         }
         return fin;
-    }           // fuck you asshole
+    }
 
             // 7 + множество людей с индеф-ми из вход. множества
     public static ArrayList<Human> func(HashMap<Integer,Human> map, HashSet<Integer> num){
@@ -59,35 +61,21 @@ public class CollectionsDemo {
         }
         return fin;
     }
-            // 10 по мн. людей постр. отобр: возрасту сопоставляет список всех людей данного возраста из входного
+
+            // 10 + по мн. людей постр. отобр: возрасту сопоставляет список всех людей данного возраста из входного
             //множества.
     public static HashMap<Integer,HashSet<Human>> fun3(HashSet<Human> list){
         HashMap<Integer,HashSet<Human>> fin=new HashMap<>();
-        Iterator<HashSet<Human>> iterator=new Iterator<HashSet<Human>>() {
-            @Override
-            public boolean hasNext() {
-                return false;
-            }
-
-            @Override
-            public HashSet<Human> next() {
-                return null;
-            }
-        };
         for (Human h:list){
             if (!fin.containsKey(h.getAge())){
+                fin.put(h.getAge(),new HashSet<Human>());
                 HashSet<Human> arr=new HashSet<>();
                 arr.add(h);
                 fin.put(h.getAge(),arr);
-                System.out.println(h.getFamil());
             }else {
                 fin.get(h.getAge()).add(h);
-                System.out.println(h.getFamil());
             }
-            /*ArrayList<Human> arr=fin.get(h.getAge());
-            fin.put(h.getAge(),arr.add(h));*/
         }
         return fin;
     }
-
 }

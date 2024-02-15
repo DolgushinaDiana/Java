@@ -50,7 +50,7 @@ public class CollectTest {
         mas1.add(3);
         mas1.add(5);
         mas1.add(7);
-        mas1.add(4);
+        /*mas1.add(4);*/
         list.add(mas);
         list.add(mas1);
 
@@ -110,18 +110,15 @@ public class CollectTest {
         HashSet<Human> map=new HashSet<>();
         map.add(new Human());
         map.add(new Human("fox","","",8));
-        map.add(new Human("tox","","",7));
-        map.add(new Human(/*" joel","","",12*/));
-        HashSet<Integer> num=new HashSet<>();
-        num.add(1);
-        num.add(3);
-        /*num.add(4);*/
+        map.add(new Human("tox","","",8));
+        map.add(new Human(" joel","","",12));
         HashMap<Integer,HashSet<Human>> fin= CollectionsDemo.fun3(map);
-        for (Map.Entry h: fin.entrySet()) {
-            for (Human n: (HashSet<Human>) h.getValue()){
-                System.out.println(h.getKey()+" "+n.getFamil());
+        for (int i:fin.keySet()){
+            System.out.println(i);
+            for (Human h:fin.get(i)){
+                System.out.printf(h.getFamil()+" ");
             }
-
+            System.out.println();
         }
     }
 }
