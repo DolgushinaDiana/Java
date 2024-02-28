@@ -57,7 +57,7 @@ public class CollectionsDemo {
     public static HashMap<Integer,Integer> fun2(HashMap<Integer,Human> map){
         HashMap<Integer,Integer> fin=new HashMap<>();
         for (int k:map.keySet()){
-            fin.put(map.get(k).getAge(),k);
+            fin.put(k,map.get(k).getAge());
         }
         return fin;
     }
