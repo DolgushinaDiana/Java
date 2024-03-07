@@ -29,7 +29,7 @@ public class ListTest {
         list.add(new Student("din","","",3,""));
         list.add(new Human("dun","","",35));
 
-        ArrayList<Human> fin=ListDemo.ages(list);
+        List<Human> fin=ListDemo.ages(list);
         for (Human human : fin) {
             System.out.println(human.getFamil());
         }

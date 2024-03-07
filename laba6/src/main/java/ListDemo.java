@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+import java.util.*;
 
 public class ListDemo {
 
             // 2 +
-    public static ArrayList<Human> sameFamil(ArrayList<Human> list, Human obj) {
-        ArrayList<Human> mas = new ArrayList<>();
+    public static List<Human> sameFamil(List<Human> list, Human obj) {
+        List<Human> mas = new ArrayList<>();
         for (Human h : list) {
             if (h.getFamil().equals(obj.famil)) {
                 mas.add(h);
@@ -14,8 +15,8 @@ public class ListDemo {
     }
 
             // 5 +
-    public static ArrayList<Human> ages(ArrayList<Human> list){
-        ArrayList<Human> fin=new ArrayList<>();
+    public static List<Human> ages(List<Human> list){
+        List<Human> fin=new ArrayList<>();
         int maxage=-1;
         for (Human h: list){
             if (h.getAge()>maxage) {
