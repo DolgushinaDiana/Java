@@ -74,6 +74,10 @@ public class CollectionsDemo {
     public static Map<Integer,Set<Human>> fun3(Set<Human> list){
         Map<Integer,Set<Human>> fin=new HashMap<>();
         for (Human h:list){
+            fin.computeIfAbsent(h.getAge(), k -> new HashSet<>());
+            fin.get(h.getAge()).add(h);
+        }
+        for (Human h:list){
             if (!fin.containsKey(h.getAge())){
                 fin.put(h.getAge(),new HashSet<Human>());
                 Set<Human> arr=new HashSet<>();
