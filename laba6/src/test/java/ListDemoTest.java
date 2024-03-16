@@ -12,9 +12,6 @@ public class ListDemoTest {
         list.add(new Human(" 2", "", "", 10));
         list.add(new Human(" 3", "", "", 10));
         list.add(new Human(" 1", "", "", 10));
-        ArrayList<Human> fin = new ArrayList<>();
-        fin.add(new Human(" 1", "", "", 10));
-        fin.add(new Human(" 1", "", "", 10));
         List<Human> same = ListDemo.sameSecondName(list, obg);
         for (Human human : same) {
             System.out.println(human.getSecondName());

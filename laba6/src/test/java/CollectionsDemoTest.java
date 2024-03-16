@@ -33,7 +33,6 @@ public class CollectionsDemoTest {
     @Test(expected = NullPointerException.class)
     public void Exception2() {
         List<String> list = null;
-        list.add("faaaaaaaa");
         CollectionsDemo.firstChar('f', list);
     }
 
@@ -87,10 +86,7 @@ public class CollectionsDemoTest {
         Collections.addAll(list,
                 null,
                 new Human("pol", "dol", "sol", 20),
-                new Human(" 2", "", "", 10),
-                new Human(" 3", "", "", 10),
-                new Human("pol", "dol", "sol", 20),
-                new Human(" 1", "", "", 10));
+                new Human(" 2", "", "", 10));
         CollectionsDemo.copyList(new Human("pol", "dol", "sol", 20), list);
     }
     @Test(expected = NullPointerException.class)
@@ -112,21 +108,20 @@ public class CollectionsDemoTest {
         Set<Integer> mas = new HashSet<>();
         Set<Integer> mas1 = new HashSet<>();
         Set<Integer> mas2 = new HashSet<>();
-        Collections.addAll(mas, 1, 2, 30, 4);
+        Collections.addAll(mas, 1, 2, 3);
         Collections.addAll(mas1, 5, 6, 7, 8);
-        Collections.addAll(mas2, 9, 12, 4, 7, 23, 1);
+        Collections.addAll(mas2, 4,5,0,11,12,33);
         Collections.addAll(list, mas, mas1, mas2);
 
         Set<Integer> m = new HashSet<>();
         Collections.addAll(m, 2,3);
 
         List<Set<Integer>> res=new ArrayList<>();
-        Collections.addAll(res,mas2,mas1);
+        Collections.addAll(res,mas1,mas2);
 
-        List<Set<Integer>> fin = CollectionsDemo.noIntersections(m, list);
-        assertEquals(res,fin);
+        assertEquals(res,CollectionsDemo.noIntersections(m, list));
         
-        for (Set<Integer> h : fin) {
+        for (Set<Integer> h : CollectionsDemo.noIntersections(m, list)) {
             for (int i : h) {
                 System.out.printf(i + " ");
             }
@@ -139,17 +134,14 @@ public class CollectionsDemoTest {
         Set<Integer> mas = new HashSet<>();
         Set<Integer> mas1 = new HashSet<>();
         Set<Integer> mas2 = new HashSet<>();
-        Collections.addAll(list, mas);
-
+        Collections.addAll(mas, 1, 2, 3);
+        Collections.addAll(mas1, 5, 6);
+        Collections.addAll(mas2, 4,5,0);
+        Collections.addAll(list, mas,mas1,mas2);
         Set<Integer> m = new HashSet<>();
-        Collections.addAll(m, 2, 9);
+        Collections.addAll(m, 2, 9,5);
         List<Set<Integer>> fin = CollectionsDemo.noIntersections(m, list);
-        for (Set<Integer> h : fin) {
-            for (int i : h) {
-                System.out.printf(i + " ");
-            }
-            System.out.println();
-        }
+        assertEquals(new ArrayList<>(),fin);
     }
 
     @Test           // 7
@@ -165,28 +157,21 @@ public class CollectionsDemoTest {
         Set<Human> fin = new HashSet<>();
         Collections.addAll(fin,new Human(),new Human("tox", "", "", 7));
         assertEquals(fin,CollectionsDemo.setOfHuman(map, num));
-        for (Human h : fin) {
-            System.out.println(h.getSecondName());
-        }
     }
 
-    @Test           // 9
-    public void mapsTest1() {
+    @Test(expected = IllegalArgumentException.class)          // 7
+    public void mapsException1() {
         HashMap<Integer, Human> map = new HashMap<>();
         map.put(1, new Human());
         map.put(2, new Human("fox", "", "", 8));
-        map.put(3, new Human("tox", "", "", 7));
-        map.put(4, new Human(" joel", "", "", 12));
+        map.put(4, new Human());
         HashSet<Integer> num = new HashSet<>();
+        assertEquals(new HashSet<>(),CollectionsDemo.setOfHuman(map, num));
 
-        Map<Integer, Integer> fin = CollectionsDemo.mapByAge(map);
-        for (Map.Entry h : fin.entrySet()) {
-            System.out.println(h.getKey() + " " + h.getValue());
-        }
     }
 
     @Test           // 8
-    public void mapsTest2() {
+    public void ageFrom19Test1() {
         HashMap<Integer, Human> map = new HashMap<>();
         map.put(1, new Human());
         map.put(2, new Human("fox", "", "", 8));
@@ -197,6 +182,28 @@ public class CollectionsDemoTest {
             System.out.println(h);
         }
     }
+
+    @Test           // 9
+    public void mapByAgeTest1() {
+        Map<Integer, Human> map = new HashMap<>();
+        map.put(1, new Human());
+        map.put(2, new Human("fox", "", "", 8));
+        map.put(3, new Human("tox", "", "", 7));
+        map.put(4, new Human(" joel", "", "", 12));
+        Map<Integer, Integer>num = new HashMap<>();
+        num.put(1,55);
+        num.put(2,8);
+        num.put(3,7);
+        num.put(4,12);
+
+        assertEquals(num,CollectionsDemo.mapByAge(map));
+        Map<Integer, Integer> fin = CollectionsDemo.mapByAge(map);
+        for (Map.Entry h : fin.entrySet()) {
+            System.out.println(h.getKey() + " " + h.getValue());
+        }
+    }
+
+
 
     @Test           // 10
     public void mapsTest3() {

@@ -1,24 +1,22 @@
-import java.util.List;
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class Human {
-    String famil;
+    String secondName;
     String name;
-    String otche;
+    String fathersName;
     int age;
 
-    public Human(){
-        famil="dim";
-        name="dan";
-        otche="don";
-        age=55;
+    public Human() {
+        secondName = "dim";
+        name = "dan";
+        fathersName = "don";
+        age = 55;
     }
 
-    public Human(String famil, String name, String otche, int age) {
-        this.famil = famil;
+    public Human(String secondName, String name, String fathersName, int age) {
+        this.secondName = secondName;
         this.name = name;
-        this.otche = otche;
+        this.fathersName = fathersName;
         this.age = age;
     }
 
@@ -30,12 +28,12 @@ public class Human {
         this.name = name;
     }
 
-    public String getOtche() {
-        return otche;
+    public String getFathersName() {
+        return fathersName;
     }
 
-    public void setOtche(String otche) {
-        this.otche = otche;
+    public void setFathersName(String fathersName) {
+        this.fathersName = fathersName;
     }
 
     public int getAge() {
@@ -46,12 +44,12 @@ public class Human {
         this.age = age;
     }
 
-    public String getFamil() {
-        return famil;
+    public String getSecondName() {
+        return secondName;
     }
 
-    public void setFamil(String famil) {
-        this.famil = famil;
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
     }
 
     @Override
@@ -59,11 +57,11 @@ public class Human {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Human human = (Human) o;
-        return getAge() == human.getAge() && Objects.equals(getFamil(), human.getFamil()) && Objects.equals(getName(), human.getName()) && Objects.equals(getOtche(), human.getOtche());
+        return getAge() == human.getAge() && Objects.equals(getSecondName(), human.getSecondName()) && Objects.equals(getName(), human.getName()) && Objects.equals(getFathersName(), human.getFathersName());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getFamil(), getName(), getOtche(), getAge());
+        return Objects.hash(getSecondName(), getName(), getFathersName(), getAge());
     }
 }
