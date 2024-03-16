@@ -3,7 +3,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListTest {
+public class ListDemoTest {
     @Test
     public void Test() {
         Human obg = new Human(" 1", "", "", 10);
@@ -15,9 +15,9 @@ public class ListTest {
         ArrayList<Human> fin = new ArrayList<>();
         fin.add(new Human(" 1", "", "", 10));
         fin.add(new Human(" 1", "", "", 10));
-        List<Human> same = ListDemo.sameFamil(list, obg);
+        List<Human> same = ListDemo.sameSecondName(list, obg);
         for (Human human : same) {
-            System.out.println(human.getFamil());
+            System.out.println(human.getSecondName());
         }
     }
     @Test
@@ -29,9 +29,9 @@ public class ListTest {
         list.add(new Student("din","","",3,""));
         list.add(new Human("dun","","",35));
 
-        List<Human> fin=ListDemo.ages(list);
+        List<Human> fin=ListDemo.maxAges(list);
         for (Human human : fin) {
-            System.out.println(human.getFamil());
+            System.out.println(human.getSecondName());
         }
     }
 }

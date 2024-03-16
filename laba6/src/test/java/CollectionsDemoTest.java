@@ -4,40 +4,38 @@ import java.util.*;
 
 import static org.junit.Assert.*;
 
-public class CollectTest {
+public class CollectionsDemoTest {
     @Test
     public void firstCharTest1() {           // 1 +
         List<String> list = new ArrayList<>();
-        Collections.addAll(list, "faaaa", "afffa", "Faaa", "");
-        char c = 'f';
-
-        assertEquals(1, CollectionsDemo.firstChar(c, list));
+        Collections.addAll(list, "faaaa", "afffa", "Faaa", "", "  ", " aa");
+        assertEquals(2,CollectionsDemo.firstChar(' ',list));
     }
-
     @Test
-    public void firstCharTest2() {
+    public void firstCharTest2() {           // 1 +
         List<String> list = new ArrayList<>();
         Collections.addAll(list, "faaaa", "afffa", "Faaa", "", "  ", " aa");
-        char c = ' ';
-        assertEquals(2, CollectionsDemo.firstChar(c, list));
+        assertEquals(1, CollectionsDemo.firstChar('f', list));
+
+    }@Test
+    public void firstCharTest3() {           // 1 +
+        List<String> list = new ArrayList<>();
+        Collections.addAll(list, "faaaa", "afffa", "Faaa", "", "  ", " aa");
+        assertEquals(0,CollectionsDemo.firstChar('h',list));
     }
 
     @Test(expected = NullPointerException.class)
     public void Exception1() {
         List<String> list = new ArrayList<>();
         Collections.addAll(list, "faaaa", null, "");
-        char c = 'f';
-        CollectionsDemo.firstChar(c, list);
+        CollectionsDemo.firstChar('f', list);
     }
-
     @Test(expected = NullPointerException.class)
     public void Exception2() {
         List<String> list = null;
         list.add("faaaaaaaa");
-        char c = 'f';
-        CollectionsDemo.firstChar(c, list);
+        CollectionsDemo.firstChar('f', list);
     }
-
 
     @Test
     public void copyListTest1() {          // 3 +
@@ -59,17 +57,28 @@ public class CollectTest {
     }
     @Test
     public void copyListTest2() {          // 3 +
+        List<Human> list=new ArrayList<>();
+        Collections.addAll(list,new Human(" 1", "", "", 10),
+                                new Human(" 1", "", "", 10));
+        assertEquals(new ArrayList<Human>(),CollectionsDemo.copyList(new Human(" 1", "", "", 10),list));
+    }
+    @Test
+    public void copyListTest3() {          // 3 +
         List<Human> list = new ArrayList<>();
         Collections.addAll(list,
                 new Human(" 1", "", "", 10),
                 new Human("pol", "dol", "sol", 20),
                 new Human(" 2", "", "", 10));
+
         List<Human> list2=CollectionsDemo.copyList(new Human("pol", "dol", "sol", 20), list);
+
         List<Human> fin = new ArrayList<>();
         Collections.addAll(fin,
                 new Human(" 1", "", "", 10),
                 new Human(" 2", "", "", 10));
-        list.add(new Human());
+
+        list.add(new Human());              // изменяем изначчальный список
+
         assertEquals(fin,list2);
     }
     @Test(expected = NullPointerException.class)
@@ -107,10 +116,13 @@ public class CollectTest {
         Collections.addAll(mas1, 5, 6, 7, 8);
         Collections.addAll(mas2, 9, 12, 4, 7, 23, 1);
         Collections.addAll(list, mas, mas1, mas2);
+
         Set<Integer> m = new HashSet<>();
-        Collections.addAll(m, 2);
+        Collections.addAll(m, 2,3);
+
         List<Set<Integer>> res=new ArrayList<>();
         Collections.addAll(res,mas2,mas1);
+
         List<Set<Integer>> fin = CollectionsDemo.noIntersections(m, list);
         assertEquals(res,fin);
         
@@ -150,10 +162,11 @@ public class CollectTest {
         HashSet<Integer> num = new HashSet<>();
         num.add(1);
         num.add(3);
-        /*num.add(4);*/
-        List<Human> fin = CollectionsDemo.setOfHuman(map, num);
+        Set<Human> fin = new HashSet<>();
+        Collections.addAll(fin,new Human(),new Human("tox", "", "", 7));
+        assertEquals(fin,CollectionsDemo.setOfHuman(map, num));
         for (Human h : fin) {
-            System.out.println(h.getFamil());
+            System.out.println(h.getSecondName());
         }
     }
 
@@ -196,7 +209,7 @@ public class CollectTest {
         for (int i : fin.keySet()) {
             System.out.println(i);
             for (Human h : fin.get(i)) {
-                System.out.printf(h.getFamil() + " ");
+                System.out.printf(h.getSecondName() + " ");
             }
             System.out.println();
         }
