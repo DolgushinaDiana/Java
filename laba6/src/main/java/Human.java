@@ -1,10 +1,10 @@
 import java.util.Objects;
 
 public class Human {
-    String secondName;
-    String name;
-    String fathersName;
-    int age;
+    private String secondName;
+    private String name;
+    private String fathersName;
+    private int age;
 
     public Human() {
         secondName = "dim";

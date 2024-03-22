@@ -18,20 +18,16 @@ public class ListDemo {
     }
 
     // 5 +
-    public static List<Human> maxAges(List<Human> list) {
+    public static Set<Human> maxAges(List<Human> list) {
         if (list == null) throw new NullPointerException();
         if (list.isEmpty()) throw new IllegalArgumentException();
-        List<Human> fin = new ArrayList<>();
+        Set<Human> fin = new HashSet<>();
         int maxage = -1;
         for (Human h : list) {
-            if (h == null) throw new NullPointerException();
-            if (h.getAge() > maxage) {
-                fin.clear();
-                fin.add(h);
-                maxage = h.getAge();
-            } else if (h.getAge() == maxage) {
-                fin.add(h);
-            }
+            if (h.getAge()>maxage) maxage=h.getAge();
+        }
+        for (Human h : list) {
+            if (h.getAge()==maxage) fin.add(h);
         }
         return fin;
     }

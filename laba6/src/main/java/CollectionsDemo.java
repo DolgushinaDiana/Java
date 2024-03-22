@@ -25,7 +25,6 @@ public class CollectionsDemo {
         return fin;
     }
 
-    // fuck you asshole
     // 4
     public static List<Set<Integer>> noIntersections(Set<Integer> set, List<Set<Integer>> arr) {
         if (set == null || arr == null) throw new NullPointerException();
@@ -55,21 +54,20 @@ public class CollectionsDemo {
         if (map.isEmpty() || num.isEmpty()) throw new IllegalArgumentException("map is empty");
         Set<Human> fin = new HashSet<>();
         for (int i : num) {
-            if (map.get(i) == null) throw new NullPointerException("");
+            if (map.get(i) == null) throw new NullPointerException("такого элемента нет");
             if (map.containsKey(i)) fin.add(map.get(i));
         }
         return fin;
     }
 
-    // 8 постр. список инд-в людей менее 19 лет
+    // 8 постр. список инд-в людей от 19 лет
     public static List<Integer> ageFrom19(Map<Integer, Human> map) {
         if (map == null) throw new NullPointerException("map is null");
-        if (map.isEmpty()) throw new IllegalArgumentException();
+        if (map.isEmpty()) throw new IllegalArgumentException("map is empty");
         List<Integer> fin = new ArrayList<>();
-        for (/*int i=0;i<map.size();i++*/ int k : map.keySet()) {
-            /*if (map.get(i).getAge()<=18)
-                fin.add(map);*/
-            if (map.get(k).getAge() <= 18) fin.add(k);
+        for (int k : map.keySet()) {
+            if (map.get(k) == null) throw new NullPointerException("element is null");
+            if (map.get(k).getAge() > 18) fin.add(k);
         }
         return fin;
     }
@@ -77,9 +75,10 @@ public class CollectionsDemo {
     // 9 нов. отоб.: инден-ру сопост возраст чела
     public static Map<Integer, Integer> mapByAge(Map<Integer, Human> map) {
         if (map == null) throw new NullPointerException("map is null");
-        if (map.isEmpty()) throw new IllegalArgumentException();
+        if (map.isEmpty()) throw new IllegalArgumentException("map is empty");
         Map<Integer, Integer> fin = new HashMap<>();
         for (int k : map.keySet()) {
+            if (map.get(k) == null) throw new NullPointerException("element is null");
             fin.put(k, map.get(k).getAge());
         }
         return fin;
@@ -87,7 +86,7 @@ public class CollectionsDemo {
 
     // 10 + по мн. людей постр. отобр: возрасту сопоставляет список всех людей данного возраста из входного
     //множества.
-    public static Map<Integer, Set<Human>> fun3(Set<Human> set) {
+    public static Map<Integer, Set<Human>> newMap(Set<Human> set) {
         if (set == null) throw new NullPointerException("map is null");
         if (set.isEmpty()) throw new IllegalArgumentException("set is empty");
         Map<Integer, Set<Human>> fin = new HashMap<>();
