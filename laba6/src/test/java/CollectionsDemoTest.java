@@ -144,13 +144,6 @@ public class CollectionsDemoTest {
         Collections.addAll(res, mas1, mas2);
 
         assertEquals(res, CollectionsDemo.noIntersections(m, list));
-        
-        /*for (Set<Integer> h : CollectionsDemo.noIntersections(m, list)) {
-            for (int i : h) {
-                System.out.printf(i + " ");
-            }
-            System.out.println();
-        }*/
     }
 
     @Test
@@ -289,10 +282,6 @@ public class CollectionsDemoTest {
         num.put(4, 12);
 
         assertEquals(num, CollectionsDemo.mapByAge(map));
-        /*Map<Integer, Integer> fin = CollectionsDemo.mapByAge(map);
-        for (Map.Entry h : fin.entrySet()) {
-            System.out.println(h.getKey() + " " + h.getValue());
-        }*/
     }
 
     @Test(expected = NullPointerException.class)           // 9
@@ -350,13 +339,6 @@ public class CollectionsDemoTest {
         fin.put(8, list2);
         fin.put(12, list3);
         assertEquals(fin, CollectionsDemo.newMap(map));
-       /* for (int i : fin.keySet()) {
-            System.out.printf(i+" ");
-            for (Human h : fin.get(i)) {
-                System.out.printf(h.getSecondName() + " ");
-            }
-            System.out.println();
-        }*/
     }
 
     @Test(expected = NullPointerException.class)           // 10

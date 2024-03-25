@@ -29,20 +29,9 @@ public class CollectionsDemo {
     public static List<Set<Integer>> noIntersections(Set<Integer> set, List<Set<Integer>> arr) {
         if (set == null || arr == null) throw new NullPointerException();
         if (set.isEmpty() || arr.isEmpty()) throw new IllegalArgumentException();
-
         List<Set<Integer>> fin = new ArrayList<>();
-        boolean tr;
-
         for (Set<Integer> s : arr) {
-            if (s == null) throw new NullPointerException();
-            tr = true;
-            for (int i:set){
-                if (s.contains(i)) {
-                    tr = false;
-                    break;
-                }
-            }
-            if (tr) fin.add(s);
+            if (Collections.disjoint(s,set)) fin.add(s);
         }
         return fin;
     }
@@ -92,8 +81,7 @@ public class CollectionsDemo {
         Map<Integer, Set<Human>> fin = new HashMap<>();
         for (Human h : set) {
             if (h == null) throw new NullPointerException();
-            fin.computeIfAbsent(h.getAge(), k -> new HashSet<>());
-            fin.get(h.getAge()).add(h);
+            fin.computeIfAbsent(h.getAge(), k -> new HashSet<>()).add(h);
         }
         return fin;
     }
